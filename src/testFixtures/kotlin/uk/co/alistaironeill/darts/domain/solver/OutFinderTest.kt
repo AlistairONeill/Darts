@@ -7,6 +7,7 @@ import strikt.assertions.single
 import uk.co.alistaironeill.darts.domain.model.Out
 import uk.co.alistaironeill.darts.domain.model.Score
 import uk.co.alistaironeill.darts.domain.model.Throw.*
+import uk.co.alistaironeill.darts.domain.model.invoke
 
 @Suppress("FunctionName")
 abstract class OutFinderTest(private val outFinder: OutFinder) {

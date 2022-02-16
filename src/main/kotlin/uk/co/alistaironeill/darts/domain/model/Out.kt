@@ -14,12 +14,8 @@ sealed interface Out {
         override val throws = 1
     }
 
-    companion object {
-        operator fun invoke(final: Dub) = Tail(final)
-        operator fun invoke(first: Throw, final: Dub) = Link(first, Tail(final))
-        operator fun invoke(first: Throw, second: Throw, final: Dub) = Link(first, Link(second, Tail(final)))
-    }
-
     val score : Score
     val throws: Int
+
+    companion object
 }
