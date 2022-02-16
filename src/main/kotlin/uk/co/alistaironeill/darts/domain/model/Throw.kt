@@ -9,7 +9,7 @@ sealed class Throw(private val multiplier: Int) {
     data class Trip(override val value: Int) : Throw(3)
 
     operator fun plus(other: List<Throw>) = listOf(this) + other
-    operator fun plus(out: Out) = out.copy(precursors = this + out.precursors)
+    operator fun plus(out: Out) = Out.Link(this, out)
 
     companion object {
         fun has(score: Score): (Throw) -> Boolean = { it.score == score }

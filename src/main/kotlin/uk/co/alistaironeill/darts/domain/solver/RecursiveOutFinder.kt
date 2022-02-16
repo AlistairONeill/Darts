@@ -21,7 +21,7 @@ class RecursiveOutFinder : OutFinder {
                         .map { out -> dart + out }
                 }.filter { it.score <= score }
 
-    private fun singleDartOut(score: Score): Out? = Population.doubles.singleOrNull(has(score))?.let(::Out)
+    private fun singleDartOut(score: Score): Out? = Population.doubles.singleOrNull(has(score))?.let(Out::Tail)
 
     private operator fun Out?.plus(other: List<Out>): Set<Out> =
         (this?.let { listOf(it) + other } ?: other).toSet()

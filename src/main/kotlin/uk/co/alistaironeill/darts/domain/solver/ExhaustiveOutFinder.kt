@@ -11,7 +11,7 @@ class ExhaustiveOutFinder : OutFinder {
 
     private fun getAll(): List<Out> = getBase().bolster().bolster()
 
-    private fun getBase(): List<Out> = Population.doubles.map { Out(emptyList(), it) }
+    private fun getBase(): List<Out> = Population.doubles.map(Out::Tail)
 
     private fun List<Out>.bolster(): List<Out> =
         this + flatMap { out -> Population.all.map { dart -> dart + out } }

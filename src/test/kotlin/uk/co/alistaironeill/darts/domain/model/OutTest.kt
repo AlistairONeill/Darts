@@ -10,7 +10,7 @@ class OutTest {
     @Test
     fun `score for an out is calculated correctly`() {
         expectThat(
-            Out(listOf(Dub(2), Trip(3)), Dub(4))
+            Out(Dub(2), Trip(3), Dub(4))
         ) {
             get { score }.isEqualTo(Score(21))
         }
